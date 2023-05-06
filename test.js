@@ -40,4 +40,7 @@ const tehnologies = ["HTML", "CSS", "JS", "React", "Node"];
 //===================================================================================
 
 
+window.document.addEventListener('keydown', (event) => {
+console.log(event)
+})
 
