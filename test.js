@@ -1,49 +1,16 @@
-
-const tehnologies = ["HTML", "CSS", "JS", "React", "Node"];
-
-// const ullist = document.createElement('ul');
-// const ref = document.querySelector('body');
+const number = 10;
 
 
-
-
-// for (i = 0; i < tehnologies.length; i += 1) {
-//     const liItem = document.createElement('li');
-
-//     liItem.textContent = tehnologies[i];
-
-//     ullist.appendChild(liItem);
+function parityCheck(number) {
+    if (number % 2 === 0) {
+        console.log('число парне:)')
+    }
+    else {
+        console.log('число не парне!')
+    }
     
-// }
-
-// document.body.prepend(ullist)
-
-//==================================================================================
-
-// const listContent = tehnologies.map(tehnology => `<li>${tehnology}</li>`).join("");
-
-// const list = `<ul>${listContent}</ul>`;
-
-// console.log(list);
-
-// document.body.insertAdjacentHTML("afterbegin",list);
-
-
-//===================================================================================
-
-// const listContent = tehnologies.reduce((markup, tehnology) => markup + `<li>${tehnology}</li>`, ""  )
-
-// const list = `<ul>${listContent}</ul>`;
- 
-//  document.body.insertAdjacentHTML("afterbegin",list);
-
-//===================================================================================
-
-
-// window.document.addEventListener('keydown', (event) => {
-// console.log(event)
-// })
+};
 
 
 
-
+parityCheck(number);
