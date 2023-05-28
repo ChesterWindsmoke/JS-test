@@ -1,16 +1,3 @@
-// const number = 10;
+const friends = ['Mango', 'Kiwi', 'Poly', 'Ajax'];
 
-
-// function parityCheck(number) {
-//     if (number % 2 === 0) {
-//         console.log('число парне:)')
-//     }
-//     else {
-//         console.log('число не парне!')
-//     }
-    
-// };
-
-
-
-// parityCheck(number);
+console.table(friends);
