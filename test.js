@@ -22,3 +22,16 @@
 // dirtyMultiply(numbers, value);
 
 // console.log(numbers);
+
+// const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
+
+// for (let i = 0; i < friends.length; i += 1) {
+//     friends[i] += '-1';
+// };
+
+// console.table(friends);
+
+
+// for (const friend of friends) {
+//     console.log(friend);
+// }
