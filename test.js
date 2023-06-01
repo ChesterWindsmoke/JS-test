@@ -1,37 +1,21 @@
-// const friends = ['Mango', 'Kiwi', 'Poly', 'Ajax'];
+// let time = 3600;
+// const countDownEl = document.getElementById('countDown');
 
-// console.table(friends);
+// setInterval(updateCountDown, 1000);
 
-// friends[0] = 'Andrew';
 
-// console.log(friends[0])
+// function updateCountDown() {
+//     const minutes = Math.floor(time / 60);
 
-// const lastIndex = friends.length - 1;
-// console.log(lastIndex);
+//     let seconds = time % 60;
 
-// const dirtyMultiply = (array, value) => {
-//     for (i = 0; i < array.length; i += 1) {
-//         array[i] = array[i] * value;
-//     }
+//     seconds = seconds < 10 ? '0' + seconds : seconds;
+
+//     countDownEl.innerHTML = `${minutes}:${seconds}`;
+
+//     time -= 1;
 
 // };
 
-// const numbers = [1, 2, 3, 4, 5];
-// const value = 2;
-
-// dirtyMultiply(numbers, value);
-
-// console.log(numbers);
-
-// const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
-
-// for (let i = 0; i < friends.length; i += 1) {
-//     friends[i] += '-1';
-// };
-
-// console.table(friends);
 
 
-// for (const friend of friends) {
-//     console.log(friend);
-// }
