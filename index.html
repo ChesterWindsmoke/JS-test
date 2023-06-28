@@ -5,10 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
-    <title>Document</title>
+    <title>Timer</title>
 </head>
 <body>
-    <p id="countDown"> 300 </p>
-    <script src="test.js"></script>
+    <div class="timers">
+        <div id="functional-timer">
+            <h2 id="functionalTitle"></h2>
+        </div>
+        <div id="class-timer">
+            <h2 id="classTitle"></h2>
+        </div>
+        <div class="actions">
+            <button id="stopTimer">Stop</button>
+            <button id="startTimer">Start</button>
+        </div>
+    </div>
+    <script type="module" src="test.js"></script>
 </body>
 </html>

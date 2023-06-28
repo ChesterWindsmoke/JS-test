@@ -1,28 +1,42 @@
-// let time = 3600;
-// const countDownEl = document.getElementById('countDown');
-
-// setInterval(updateCountDown, 1000);
+// import refs from './refs.js';
 
 
-// function updateCountDown() {
-//     const minutes = Math.floor(time / 60);
+// const NEW_YEAR = new Date('01.01.2024 00:00');
 
-//     let seconds = time % 60;
+// const handleTime = () => {
+//     const now = new Date();
+//     const timeDifference = NEW_YEAR - now;
 
-//     seconds = seconds < 10 ? '0' + seconds : seconds;
+//     const daysLeft = Math.floor(timeDifference / 86400000);
+//     const hoursLeft = Math.floor((timeDifference % 86400000) / 3600000);
+//     const minutesLeft = Math.floor((timeDifference % 3600000) / 60000);
+//     const secondsLeft = Math.floor((timeDifference % 60000) / 1000);
+  
+//     attachToElement(refs.functionalTimerEl,
+//         { daysLeft, hoursLeft, minutesLeft, secondsLeft });
+// };
 
-//     countDownEl.innerHTML = `${minutes}:${seconds}`;
 
-//     time -= 1;
+// const attachToElement = (el, { daysLeft, hoursLeft, minutesLeft, secondsLeft }) => {
+
+//     const timeLeftValue = `${daysLeft}d ${hoursLeft}h ${minutesLeft}m ${secondsLeft}s`
+//     el.textContent = timeLeftValue;
 
 // };
 
-console.log('First log');
+// let timer = setInterval(handleTime, 1000);
 
-setTimeout(() => {
-    console.log('Second log')
-}, 2000);
+// refs.stopTimerEl.addEventListener('click', () => {
+//     clearInterval(timer);
+// });
 
-console.log('Third log');
+// refs.startTimerEl.addEventListener('click', () => {
+//     timer = setInterval(handleTime, 1000);
+// });
+
+
+
+
+
 
 
