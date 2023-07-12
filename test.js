@@ -1,3 +1,4 @@
+"use strict";
 // import refs from './refs.js';
 
 
@@ -36,7 +37,94 @@
 
 
 
+// const isSuccess = false;
+
+// const promise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         if (isSuccess) {
+//             resolve('Success! Value passed to resolve function');
+//         }
+//         else {
+//             reject('Error! Error passed to reject function');
+//         }
+//     }, 2000);
+// });
+
+// console.log('Before promise.then()');
+
+// promise.then(
+//     value => {
+//         console.log('onResolve call inside promise.then()');
+//         console.log(value);
+//     },
+//     error => {
+//         console.log('onReject call inside promise.then()');
+//         console.log(error);
+//     }
+// );
+
+// console.log('After promise.then()')
 
 
+// const isSuccess = false;
+
+// const promise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         if (isSuccess) {
+//             resolve('Success! Value passed to resolve function');
+//         }
+//         else {
+//             reject('Error! Error passed to reject function');
+//         }
+//     }, 2000);
+// });
+
+// promise
+//     .then(value => {
+//         console.log(value);
+//     })
+//     .catch(error => {
+//     console.log(error);
+// });
+
+// const isSuccess = false;
+
+// const promise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         if (isSuccess) {
+//             resolve('Success! Value passed to resolve function');
+//         }
+//         else {
+//             reject('Error! Error passed to reject function');
+//         }
+//     }, 2000);
+// });
+
+// promise.then(value => console.log(value));
+// promise.catch(error => console.log(error));
+// promise.finally(() => console.log('Promise settled!'))
+
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(5);
+    }, 2000);
+}); 
 
 
+promise.then(value => {
+    console.log(value);
+    return value * 2;
+})
+    .then(value => {
+        console.log(value);
+        return value * 3;
+    })
+    .then(value => {
+        console.log(value);
+    })
+    .catch(error => {
+        console.log(error);
+    })
+    .finally(() => {
+        console.log('Final task');
+    });
