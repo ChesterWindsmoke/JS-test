@@ -49,5 +49,13 @@ function findFirstNonRepeatingChar(word) {
     return null;
 }
 
+function uniqueSymbol() {
+    const chars = findFirstNonRepeatingChar(word);
+
+    chars.forEach(char => {
+        console.log(char);
+    });
+}
+
 
 
