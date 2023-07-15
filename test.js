@@ -104,27 +104,77 @@
 // promise.catch(error => console.log(error));
 // promise.finally(() => console.log('Promise settled!'))
 
-const promise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve(5);
-    }, 2000);
-}); 
+// const promise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve(5);
+//     }, 2000);
+// });
 
 
-promise.then(value => {
-    console.log(value);
-    return value * 2;
-})
-    .then(value => {
-        console.log(value);
-        return value * 3;
-    })
-    .then(value => {
-        console.log(value);
-    })
-    .catch(error => {
-        console.log(error);
-    })
-    .finally(() => {
-        console.log('Final task');
-    });
+// promise.then(value => {
+//     console.log(value);
+//     return value * 2;
+// })
+//     .then(value => {
+//         console.log(value);
+//         return value * 3;
+//     })
+//     .then(value => {
+//         console.log(value);
+//     })
+//     .catch(error => {
+//         console.log(error);
+//     })
+//     .finally(() => {
+//         console.log('Final task');
+//     });
+
+
+// let cost = 0;
+
+// const subscription = 'free';
+
+// if (subscription === 'pro') {
+//     cost = 100;
+// }
+// else {
+//     cost = 0;
+// }
+
+// console.log(cost)
+
+// let cost;
+
+// const subscription = 'pro';
+
+// if (subscription === 'free') {
+//     cost = 0;
+// }
+// else if (subscription === 'pro') {
+//     cost = 100;
+// }
+// else if (subscription === 'premium') {
+//     cost = 200;
+// }
+// else {
+//     console.log('Invalid subscription type');
+// }
+
+// console.log(cost);
+
+// let type;
+// const age = 20;
+
+// if (age >= 18) {
+//     type = 'adult'
+// }
+
+// else {
+//     type = 'child'
+// }
+
+const age = 20;
+
+const type = age >= 18 ? 'adult' : 'child';
+
+console.log(type);
