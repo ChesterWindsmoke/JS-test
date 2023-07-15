@@ -1,180 +1,53 @@
-"use strict";
-// import refs from './refs.js';
+// 1.Программа приймає на вхід будь який текст:
+// - будемо приймати текст через textarea
+// - будемо приймати текст після натискання на кнопку
+// - знаходимо textarea за допомогую getElementById
+// - знаходимо кнопку через querySelector
+// - вішаємо на кнопку слухач подій та викликаємо функію по кліку
+// - по кліку ф-цію повертає текст який ввів користувач
+
+// 2.Програма проходить по кожному слову цього тексту та аналізує його
+// - перебираємо слова
+// 3.Програма знаходить в кожному слові найперший унікальний символ який не повторюється
+// 4.Програма отримує набір символів (по одному унікальному символу з кожного слова)
+// 5.Програма аналізує набір символів та обирає перший унікальний символ який не повторюється в наборі та повертає його
+
+const textAreaEl = document.getElementById('user-text');
+const buttonEl = document.querySelector('.send-text-btn'); 
+
+buttonEl.addEventListener('click', handleTextAreaInput);
+
+function textAreaInput () {
+    const result = textAreaEl.value;
+    const words = result.split(' ');
+
+    return words;
+}
+
+function handleTextAreaInput() {
+    const words = textAreaInput();
+
+    words.forEach(word => {
+        const firstNonRepeatingChar = findFirstNonRepeatingChar(word);
+        console.log(firstNonRepeatingChar);
+    });
+}
+
+function findFirstNonRepeatingChar(word) {
+    const charCount = {};
+
+    for (const char of word) {
+        charCount[char] = (charCount[char] || 0) + 1;
+    }
+
+    for (const char of word) {
+        if (charCount[char] === 1) {
+            return char;
+        }
+    }
+
+    return null;
+}
 
 
-// const NEW_YEAR = new Date('01.01.2024 00:00');
 
-// const handleTime = () => {
-//     const now = new Date();
-//     const timeDifference = NEW_YEAR - now;
-
-//     const daysLeft = Math.floor(timeDifference / 86400000);
-//     const hoursLeft = Math.floor((timeDifference % 86400000) / 3600000);
-//     const minutesLeft = Math.floor((timeDifference % 3600000) / 60000);
-//     const secondsLeft = Math.floor((timeDifference % 60000) / 1000);
-  
-//     attachToElement(refs.functionalTimerEl,
-//         { daysLeft, hoursLeft, minutesLeft, secondsLeft });
-// };
-
-
-// const attachToElement = (el, { daysLeft, hoursLeft, minutesLeft, secondsLeft }) => {
-
-//     const timeLeftValue = `${daysLeft}d ${hoursLeft}h ${minutesLeft}m ${secondsLeft}s`
-//     el.textContent = timeLeftValue;
-
-// };
-
-// let timer = setInterval(handleTime, 1000);
-
-// refs.stopTimerEl.addEventListener('click', () => {
-//     clearInterval(timer);
-// });
-
-// refs.startTimerEl.addEventListener('click', () => {
-//     timer = setInterval(handleTime, 1000);
-// });
-
-
-
-// const isSuccess = false;
-
-// const promise = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//         if (isSuccess) {
-//             resolve('Success! Value passed to resolve function');
-//         }
-//         else {
-//             reject('Error! Error passed to reject function');
-//         }
-//     }, 2000);
-// });
-
-// console.log('Before promise.then()');
-
-// promise.then(
-//     value => {
-//         console.log('onResolve call inside promise.then()');
-//         console.log(value);
-//     },
-//     error => {
-//         console.log('onReject call inside promise.then()');
-//         console.log(error);
-//     }
-// );
-
-// console.log('After promise.then()')
-
-
-// const isSuccess = false;
-
-// const promise = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//         if (isSuccess) {
-//             resolve('Success! Value passed to resolve function');
-//         }
-//         else {
-//             reject('Error! Error passed to reject function');
-//         }
-//     }, 2000);
-// });
-
-// promise
-//     .then(value => {
-//         console.log(value);
-//     })
-//     .catch(error => {
-//     console.log(error);
-// });
-
-// const isSuccess = false;
-
-// const promise = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//         if (isSuccess) {
-//             resolve('Success! Value passed to resolve function');
-//         }
-//         else {
-//             reject('Error! Error passed to reject function');
-//         }
-//     }, 2000);
-// });
-
-// promise.then(value => console.log(value));
-// promise.catch(error => console.log(error));
-// promise.finally(() => console.log('Promise settled!'))
-
-// const promise = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//         resolve(5);
-//     }, 2000);
-// });
-
-
-// promise.then(value => {
-//     console.log(value);
-//     return value * 2;
-// })
-//     .then(value => {
-//         console.log(value);
-//         return value * 3;
-//     })
-//     .then(value => {
-//         console.log(value);
-//     })
-//     .catch(error => {
-//         console.log(error);
-//     })
-//     .finally(() => {
-//         console.log('Final task');
-//     });
-
-
-// let cost = 0;
-
-// const subscription = 'free';
-
-// if (subscription === 'pro') {
-//     cost = 100;
-// }
-// else {
-//     cost = 0;
-// }
-
-// console.log(cost)
-
-// let cost;
-
-// const subscription = 'pro';
-
-// if (subscription === 'free') {
-//     cost = 0;
-// }
-// else if (subscription === 'pro') {
-//     cost = 100;
-// }
-// else if (subscription === 'premium') {
-//     cost = 200;
-// }
-// else {
-//     console.log('Invalid subscription type');
-// }
-
-// console.log(cost);
-
-// let type;
-// const age = 20;
-
-// if (age >= 18) {
-//     type = 'adult'
-// }
-
-// else {
-//     type = 'child'
-// }
-
-const age = 20;
-
-const type = age >= 18 ? 'adult' : 'child';
-
-console.log(type);
