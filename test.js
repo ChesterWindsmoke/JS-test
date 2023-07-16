@@ -1,46 +1,56 @@
-// 1.Программа приймає на вхід будь який текст:
-// - будемо приймати текст через textarea
-// - будемо приймати текст після натискання на кнопку
-// - знаходимо textarea за допомогую getElementById
-// - знаходимо кнопку через querySelector
-// - вішаємо на кнопку слухач подій та викликаємо функію по кліку
-// - по кліку ф-цію повертає текст який ввів користувач
-
-// 2.Програма проходить по кожному слову цього тексту та аналізує його
-// - перебираємо слова
-// 3.Програма знаходить в кожному слові найперший унікальний символ який не повторюється
-// 4.Програма отримує набір символів (по одному унікальному символу з кожного слова)
-// 5.Програма аналізує набір символів та обирає перший унікальний символ який не повторюється в наборі та повертає його
-
+// Знаходимо необхідні для нас елементи
 const textAreaEl = document.getElementById('user-text');
 const buttonEl = document.querySelector('.send-text-btn'); 
-
+// Вішаємо на кнопку слухач подій
 buttonEl.addEventListener('click', handleTextAreaInput);
 
-function textAreaInput () {
+// Функція яка повертає масив слів
+function textAreaInput() {
     const result = textAreaEl.value;
     const words = result.split(' ');
 
     return words;
 }
 
+// Функція обробки введеного тексту
 function handleTextAreaInput() {
     const words = textAreaInput();
-
-    words.forEach(word => {
-        const firstNonRepeatingChar = findFirstNonRepeatingChar(word);
-        console.log(firstNonRepeatingChar);
-    });
+    const uniqueChars = findUniqueChars(words);
+    const result = findFirstNonRepeatingChar(uniqueChars);
+    console.log(result);
 }
 
-function findFirstNonRepeatingChar(word) {
+// Функція яка знаходить унікальні символи в кожному слові
+function findUniqueChars(words) {
+    const uniqueChars = [];
+
+    for (const word of words) {
+        const charCount = {};
+
+        for (const char of word) {
+            charCount[char] = (charCount[char] || 0) + 1;
+        }
+
+        for (const char of word) {
+            if (charCount[char] === 1) {
+                uniqueChars.push(char);
+                break;
+            }
+        }
+    }
+
+    return uniqueChars;
+}
+
+// Функція яка знаходить перший унікальний символ
+function findFirstNonRepeatingChar(chars) {
     const charCount = {};
 
-    for (const char of word) {
+    for (const char of chars) {
         charCount[char] = (charCount[char] || 0) + 1;
     }
 
-    for (const char of word) {
+    for (const char of chars) {
         if (charCount[char] === 1) {
             return char;
         }
@@ -48,14 +58,5 @@ function findFirstNonRepeatingChar(word) {
 
     return null;
 }
-
-// function uniqueSymbol() {
-//     const chars = findFirstNonRepeatingChar(word);
-
-//     chars.forEach(char => {
-//         console.log(char);
-//     });
-// }
-
 
 
