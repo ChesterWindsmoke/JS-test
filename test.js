@@ -8,12 +8,11 @@
 
 // squareDigits(num);
 
-highAndLow("1 2 3 4 5");  // return "5 1"
-highAndLow("1 2 -3 4 5"); // return "5 -3"
-highAndLow("1 9 3 4 -5"); // return "9 -5"
+// const numbers = ['3', '2', '1', '2'];
 
-function highAndLow(numbers){
-  // ...
-}
+// function highAndLow(numbers){
+//   return Math.min(...numbers.map(number));
+//    return Math.max(...numbers.map(number));
+// }
 
 
